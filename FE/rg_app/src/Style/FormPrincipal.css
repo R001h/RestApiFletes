@@ -1,0 +1,534 @@
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Estilo general del cuerpo */
+.body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #f4f4f4;
+  color: #333;
+  scroll-behavior: smooth;
+}
+
+.main-container {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+/* Header */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 50px;
+  background-color: #ffffff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  animation: slideDown 0.6s ease forwards;
+}
+
+.logo-img {
+  width: 140px;
+}
+
+/* Alineación del menú y botón */
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.nav-links li {
+  font-size: 18px;
+  color: #333;
+  cursor: pointer;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.nav-links li:hover {
+  color: #ff4596;
+  transform: translateY(-5px);
+}
+
+.btn-contact {
+  padding: 12px 25px;
+  background-color: #ff4596;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 50px;
+  font-size: 16px;
+  font-weight: bold;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.4s ease, transform 0.3s ease;
+}
+
+.btn-contact:hover {
+  background-color: #ff4596;
+  transform: scale(1.05);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+}
+
+/* Animación del header */
+@keyframes slideDown {
+  from {
+    transform: translateY(-100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+/* Banner principal */
+.banner {
+  background-image: url('banner.jpg'); /* Cambia por tu imagen */
+  background-size: cover;
+  background-position: center;
+  height: 85vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  position: relative;
+  animation: fadeIn 1.5s ease;
+}
+
+.banner::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+}
+
+.banner-content {
+  position: relative;
+  z-index: 1;
+}
+
+.banner-content h1 {
+  font-size: 4rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.7);
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 1s ease forwards;
+}
+
+.banner-content p {
+  font-size: 1.5rem;
+  font-weight: 300;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 1.2s ease forwards;
+}
+
+/* Animaciones del banner */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Sección sobre la empresa */
+.about-section {
+  padding: 80px 50px;
+  text-align: center;
+  background-color: #ffffff;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  border-radius: 15px;
+  margin: -100px auto 50px auto;
+  max-width: 90%;
+  animation: slideIn 1.5s ease forwards;
+}
+
+.about-section h2 {
+  font-size: 3rem;
+  font-weight: bold;
+  margin-bottom: 40px;
+  color: #333;
+}
+
+.about-section p {
+  font-size: 1.5rem;
+  line-height: 1.8;
+  color: #555;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* Tarjetas de servicios */
+.services {
+  display: flex;
+  justify-content: space-around;
+  gap: 30px;
+  margin-top: 50px;
+}
+
+.service-card {
+  background-color: #f8f8f8;
+  border-radius: 15px;
+  padding: 30px;
+  width: 30%;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+}
+
+.service-card h3 {
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.service-card p {
+  font-size: 1.2rem;
+  color: #555;
+}
+
+/* Alineación del menú y botón */
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+/*Estilo al los input*/
+.input {
+  background-color: #f9f9f9; /* Light background */
+  border-radius: 8px; /* Rounded corners */
+  padding: 20px; /* Padding inside the container */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Soft shadow */
+  margin: 20px auto; /* Center the input container */
+  max-width: 400px; /* Set a maximum width */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Animation for hover */
+}
+
+.input:hover {
+  transform: translateY(-5px); /* Lift effect on hover */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* Increase shadow on hover */
+}
+
+.input div {
+  margin-bottom: 15px; /* Spacing between input fields */
+}
+
+input[type="file"], 
+input[type="text"] {
+  width: 100%; /* Full width */
+  padding: 10px; /* Padding inside inputs */
+  border: 1px solid #ddd; /* Light border */
+  border-radius: 4px; /* Rounded corners for inputs */
+  outline: none; /* Remove outline */
+  transition: border-color 0.3s ease; /* Animation for focus */
+}
+
+input[type="file"]:focus, 
+input[type="text"]:focus {
+  border-color: #007bff; /* Change border color on focus */
+}
+
+button {
+  background-color: #007bff; /* Button color */
+  color: white; /* Button text color */
+  border: none; /* Remove border */
+  border-radius: 4px; /* Rounded corners */
+  padding: 10px; /* Padding inside button */
+  cursor: pointer; /* Pointer cursor on hover */
+  transition: background-color 0.3s ease; /* Animation for hover */
+  margin-left: 150px;
+}
+
+button:hover {
+  background-color: #0056b3; /* Darker button color on hover */
+}
+
+
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  text-transform: uppercase;
+  font-weight: 600;
+  margin-right: auto; /* Alinea todos los enlaces a la izquierda */
+}
+
+.nav-links li {
+  font-size: 18px;
+  color: #333;
+  cursor: pointer;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.nav-links li:hover {
+  color: #ff4596;
+  transform: translateY(-5px);
+}
+
+/* Botón alineado al final */
+.btn-contact {
+  padding: 12px 25px;
+  background-color: #ff4596;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 50px;
+  font-size: 16px;
+  font-weight: bold;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.4s ease, transform 0.3s ease;
+  margin-left: auto; /* Alinea el botón al final del contenedor */
+}
+
+.btn-contact:hover {
+  background-color: #ff4596;
+  transform: scale(1.05);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+}
+
+
+
+/* Animaciones */
+@keyframes slideIn {
+  from {
+    transform: translateY(30px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.button-container{
+  display: grid;
+  grid-template-columns: 100px 50px;
+  margin-left: 20px;
+}
+
+.btn-delete {
+  background-color: red;
+  color: white;
+}
+
+
+/* Media query
+
+/* Estilos Generales */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #f4f4f4;
+  color: #333;
+}
+
+/* Banner */
+.banner {
+  background-color: grey; /* Color de fondo del banner */
+  padding: 60px 20px;
+  text-align: center;
+  color: white;
+}
+
+.banner-content h1 {
+  font-size: 2.5em;
+  margin-bottom: 10px;
+}
+
+.banner-content p {
+  font-size: 1.2em;
+}
+
+/* Sección "Sobre Nuestra Empresa" */
+.about-section {
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.about-section h2 {
+  font-size: 2.2em;
+  margin-bottom: 20px;
+}
+
+.about-section p {
+  font-size: 1.1em;
+  line-height: 1.6;
+  margin-bottom: 40px;
+}
+
+/* Servicios */
+.services {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.service-card {
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  flex-basis: 30%;
+  transition: transform 0.3s ease;
+}
+
+.service-card h3 {
+  font-size: 1.5em;
+  margin-bottom: 10px;
+}
+
+.service-card p {
+  font-size: 1.1em;
+  color: #666;
+}
+
+.service-card:hover {
+  transform: scale(1.05);
+}
+
+/* Media Queries */
+
+/* Dispositivos pequeños (320px - 480px) */
+@media (max-width: 480px) {
+  .banner-content h1 {
+    font-size: 1.8em;
+  }
+
+  .banner-content p {
+    font-size: 1em;
+  }
+
+  .about-section h2 {
+    font-size: 1.8em;
+  }
+
+  .about-section p {
+    font-size: 1em;
+  }
+
+  /* Los servicios ahora estarán en columnas en lugar de en fila */
+  .services {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .service-card {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+}
+
+/* Dispositivos medianos (481px - 768px) */
+@media (max-width: 768px) {
+  .banner-content h1 {
+    font-size: 2em;
+  }
+
+  .banner-content p {
+    font-size: 1.1em;
+  }
+
+  .about-section h2 {
+    font-size: 2em;
+  }
+
+  .about-section p {
+    font-size: 1.1em;
+  }
+
+  .service-card {
+    flex-basis: 45%; /* Los divs ocuparán el 45% del ancho en pantallas medianas */
+  }
+}
+
+/* Laptops pequeñas (769px - 1024px) */
+@media (max-width: 1024px) {
+  .banner-content h1 {
+    font-size: 2.2em;
+  }
+
+  .banner-content p {
+    font-size: 1.2em;
+  }
+
+  .about-section h2 {
+    font-size: 2.1em;
+  }
+
+  .about-section p {
+    font-size: 1.1em;
+  }
+
+  .service-card {
+    flex-basis: 30%;
+  }
+}
+
+/* Pantallas grandes (1025px en adelante) */
+@media (min-width: 1025px) {
+  .banner-content h1 {
+    font-size: 2.5em;
+  }
+
+  .banner-content p {
+    font-size: 1.2em;
+  }
+
+  .about-section h2 {
+    font-size: 2.2em;
+  }
+
+  .about-section p {
+    font-size: 1.1em;
+  }
+
+  .service-card {
+    flex-basis: 30%;
+  }
+}
